@@ -13,8 +13,8 @@ I work on data systems and build things across **Rust, Go, and Python** — from
 
 ### Things I build
 
-- **[Glance](https://github.com/wangzhigang1999/glance)** — An ESP32-S3 desk display. Local readings, GitHub activity, and a quiet pixel interface. The card above borrows its screen.
-- **[CouchPilot](https://github.com/wangzhigang1999/couchpilot)** — Control a desktop with a gamepad. Built in Go.
+- **[Glance](https://github.com/wangzhigang1999/glance)** — A little window into your digital life — GitHub activity and your connected home, right on your desk.
+- **[CouchPilot](https://github.com/wangzhigang1999/couchpilot)** — Vibe code from the couch. Drive your AI coding workflow with a gamepad.
 
 ### Around here
 
