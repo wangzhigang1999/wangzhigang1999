@@ -4,7 +4,7 @@ import unittest
 from datetime import UTC, date, datetime, timedelta
 from xml.etree import ElementTree
 
-from scripts.render import Day, Week, normalize, render, stats
+from scripts.render import Breakdown, Day, Week, normalize, render, stats
 
 
 class CardTests(unittest.TestCase):
@@ -25,17 +25,17 @@ class CardTests(unittest.TestCase):
                         "contributionCount": i,
                         "contributionLevel": "FIRST_QUARTILE",
                     }
-                    for i in range(35)
+                    for i in range(90)
                 ]
             }
         ]
         days = normalize(weeks, today)
-        self.assertEqual(len(days), 28)
-        self.assertEqual(days[0].date, date(2025, 12, 6))
+        self.assertEqual(len(days), 84)
+        self.assertEqual(days[0].date, date(2025, 10, 11))
         self.assertEqual(days[-1].date, today)
         with self.assertRaises(ValueError):
             normalize([], today)
-        image = render("a&b", days, datetime(2026, 1, 2, tzinfo=UTC))
+        image = render("a&b", days, datetime(2026, 1, 2, tzinfo=UTC), Breakdown(12, 3, 2, 4))
         root = ElementTree.fromstring(image)
         self.assertIn("a&b", root.find("{http://www.w3.org/2000/svg}title").text or "")  # type: ignore[union-attr]
         self.assertNotIn("<script", image)
