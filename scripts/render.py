@@ -189,17 +189,56 @@ def render(login: str, days: list[Day], now: datetime) -> str:
     return "\n".join(svg) + "\n"
 
 
+def render_mobile(login: str, days: list[Day], now: datetime) -> str:
+    """A separate compact view keeps labels readable in GitHub's narrow mobile README."""
+    total, active, best = stats(days)
+    svg = [
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 430" role="img">',
+        f"<title>{escape(login)}: {total} contributions over 28 days</title>",
+        '<rect x="1" y="1" width="398" height="428" rx="20" fill="#f0f2e9" stroke="#cbd3c1"/>',
+        '<rect x="12" y="12" width="376" height="406" rx="7" fill="#e7ebdc" stroke="#72816a"/>',
+        text(f"@{login}", 30, 47, 20, "#344b38"),
+        text("GITHUB / LAST 28 DAYS", 30, 72, 14),
+        '<path d="M30 87H370 M30 284H370" stroke="#a8b49d"/>',
+    ]
+    for col in range(7):
+        label = (days[0].date + timedelta(days=col)).strftime("%a")[0]
+        svg.append(text(label, 46 + col * 47, 111, 14))
+    for i, day in enumerate(days):
+        x, y = 36 + (i % 7) * 47, 122 + (i // 7) * 31
+        svg.append(
+            f'<rect x="{x}" y="{y}" width="32" height="23" rx="2" '
+            f'fill="{COLORS[day.level]}" stroke="#a8b49d" stroke-width="0.6">'
+            f"<title>{day.date}: {day.count} contributions</title></rect>"
+        )
+    svg.extend(
+        [
+            text(f"{days[0].date:%b %d} - {days[-1].date:%b %d}", 36, 269, 15),
+            numeral(total, 30, 306, min(9, 145 // (len(str(total)) * 4 - 1))),
+            text("CONTRIBUTIONS", 30, 371, 14),
+            numeral(active, 207, 314, 6),
+            text("ACTIVE DAYS", 191, 371, 12),
+            numeral(best, 313, 314, 6),
+            text("BEST STREAK", 291, 371, 12),
+            text(f"UPDATED {now:%Y-%m-%d} UTC", 30, 401, 13),
+            "</svg>",
+        ]
+    )
+    return "\n".join(svg) + "\n"
+
+
 def main() -> None:
     login = os.environ.get("PROFILE_LOGIN", "wangzhigang1999")
     if not re.fullmatch(r"[A-Za-z0-9-]{1,39}", login):
         raise ValueError("Invalid profile login")
     now = datetime.now(UTC)
-    card = render(login, fetch_days(login, now), now)
-    path = Path("assets/github.svg")
-    path.parent.mkdir(exist_ok=True)
-    temporary = path.with_suffix(".tmp")
-    temporary.write_text(card, encoding="utf-8")
-    temporary.replace(path)
+    days = fetch_days(login, now)
+    for name, renderer in [("github.svg", render), ("github-mobile.svg", render_mobile)]:
+        path = Path("assets") / name
+        path.parent.mkdir(exist_ok=True)
+        temporary = path.with_suffix(".tmp")
+        temporary.write_text(renderer(login, days, now), encoding="utf-8")
+        temporary.replace(path)
 
 
 if __name__ == "__main__":
