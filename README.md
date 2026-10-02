@@ -5,10 +5,7 @@ Data infrastructure, open source, and small tools that make everyday life better
 I work on data systems and build things across **Rust, Go, and Python** — from developer tools to a little display on my desk.
 
 <a href="https://github.com/wangzhigang1999/glance">
-  <picture>
-    <source media="(max-width: 600px)" srcset="assets/github-mobile.svg" />
-    <img src="assets/github.svg" alt="Glance — my GitHub activity over the last 28 days" width="860" />
-  </picture>
+  <img src="assets/github.svg" alt="My GitHub activity over the last 28 days" width="480" />
 </a>
 
 ### Things I build

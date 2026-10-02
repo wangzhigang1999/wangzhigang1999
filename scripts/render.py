@@ -1,4 +1,4 @@
-"""Render a dependency-free, board-inspired SVG using the public profile calendar."""
+"""Render a dependency-free, compact SVG using the public profile calendar."""
 
 from __future__ import annotations
 
@@ -53,19 +53,6 @@ class Day:
 
 LEVELS = ["NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE"]
 COLORS = ["#d9dfcf", "#bac9a9", "#8da780", "#5e7b59", "#344b38"]
-# Pixel numerals are paths, so the SVG never depends on fonts, scripts, or remote assets.
-DIGITS = {
-    "0": ["111", "101", "101", "101", "111"],
-    "1": ["010", "110", "010", "010", "111"],
-    "2": ["111", "001", "111", "100", "111"],
-    "3": ["111", "001", "111", "001", "111"],
-    "4": ["101", "101", "111", "001", "001"],
-    "5": ["111", "100", "111", "001", "111"],
-    "6": ["111", "100", "111", "101", "111"],
-    "7": ["111", "001", "010", "010", "010"],
-    "8": ["111", "101", "111", "101", "111"],
-    "9": ["111", "101", "111", "001", "111"],
-}
 
 
 def normalize(weeks: list[Week], today: date) -> list[Day]:
@@ -127,100 +114,49 @@ def stats(days: list[Day]) -> tuple[int, int, int]:
     return sum(day.count for day in days), sum(day.count > 0 for day in days), best
 
 
-def numeral(value: int, x: int, y: int, size: int) -> str:
-    commands: list[str] = []
-    for i, char in enumerate(str(value)):
-        for row, cells in enumerate(DIGITS[char]):
-            for col, cell in enumerate(cells):
-                if cell == "1":
-                    commands.append(
-                        f"M{x + (i * 4 + col) * size} {y + row * size}h{size}v{size}h-{size}z"
-                    )
-    return f'<path d="{"".join(commands)}" fill="#344b38"/>'
-
-
-def text(value: str, x: int, y: int, size: int = 14, color: str = "#65745d") -> str:
+def text(
+    value: str, x: int, y: int, size: int = 11, color: str = "#68776e", weight: int = 400
+) -> str:
     return (
         f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" '
-        f'font-family="monospace">{escape(value)}</text>'
+        f'font-weight="{weight}" font-family="Segoe UI,Arial,sans-serif">'
+        f"{escape(value)}</text>"
     )
 
 
 def render(login: str, days: list[Day], now: datetime) -> str:
+    """One small card for desktop and mobile; retain the complete public calendar."""
     total, active, best = stats(days)
     title = f"{login}: {total} contributions, {active} active days in the last 28 days"
     svg = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 408" '
-        f'role="img" aria-labelledby="title desc"><title id="title">{escape(title)}</title>',
-        '<desc id="desc">GitHub profile activity, updated daily. '
-        "Contributions are not commits. Streak is limited to this 28-day window.</desc>",
-        '<rect x="1" y="1" width="858" height="406" rx="24" fill="#f0f2e9" stroke="#cbd3c1"/>',
-        '<rect x="20" y="20" width="820" height="368" rx="9" fill="#e7ebdc" stroke="#72816a"/>',
-        text(f"@{login}", 46, 65, 24, "#344b38"),
-        text("GLANCE / GITHUB", 666, 63, 14),
-        '<path d="M46 89H814 M324 115V302 M46 327H814" stroke="#a8b49d" fill="none"/>',
-        text("LAST 28 DAYS", 364, 129, 14),
+        '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="132" '
+        'viewBox="0 0 480 132" role="img" aria-labelledby="title desc">',
+        f'<title id="title">{escape(title)}</title>',
+        f'<desc id="desc">Updated {now:%Y-%m-%d} UTC. Contributions are not commits. '
+        "Best streak is limited to this 28-day window.</desc>",
+        '<rect x=".5" y=".5" width="479" height="131" rx="12" fill="#fff" stroke="#dfe5df"/>',
+        text("GitHub activity", 20, 25, 13, "#34473a", 600),
+        text("Last 28 days", 369, 25),
+        '<path d="M135 46v42 M249 46v42" stroke="#e8ece7"/>',
     ]
-    start = days[0].date
-    for col in range(7):
-        label = (start + timedelta(days=col)).strftime("%a")[0]
-        svg.append(text(label, 67 + col * 31, 128, 12))
+    for x, value, label in [
+        (20, total, "contributions"),
+        (153, active, "active days"),
+        (267, best, "best streak · days"),
+    ]:
+        svg.append(text(str(value), x, 69, 30, "#365744", 600))
+        svg.append(text(label, x, 88))
     for i, day in enumerate(days):
-        x, y = 62 + (i % 7) * 31, 143 + (i // 7) * 31
+        x, y = 369 + (i % 7) * 13, 41 + (i // 7) * 13
         svg.append(
-            f'<rect x="{x}" y="{y}" width="23" height="23" rx="2" '
-            f'fill="{COLORS[day.level]}" stroke="#a8b49d" stroke-width="0.6">'
-            f"<title>{day.date}: {day.count} contributions</title></rect>"
+            f'<rect x="{x}" y="{y}" width="10" height="10" rx="2" '
+            f'fill="{COLORS[day.level]}"><title>{day.date}: '
+            f"{day.count} contributions</title></rect>"
         )
     svg.extend(
         [
-            text(f"{start:%b %d} - {days[-1].date:%b %d}", 62, 297, 13),
-            numeral(total, 364, 153, 9),
-            text("CONTRIBUTIONS", 364, 223, 14),
-            numeral(active, 364, 250, 6),
-            text("ACTIVE DAYS", 364, 304, 12),
-            numeral(best, 593, 250, 6),
-            text("BEST STREAK / DAYS", 593, 304, 12),
-            text("FROM MY DESK TO MY PROFILE", 46, 360, 12),
-            text(f"UPDATED {now:%Y-%m-%d} UTC", 593, 360, 12),
-            "</svg>",
-        ]
-    )
-    return "\n".join(svg) + "\n"
-
-
-def render_mobile(login: str, days: list[Day], now: datetime) -> str:
-    """A separate compact view keeps labels readable in GitHub's narrow mobile README."""
-    total, active, best = stats(days)
-    svg = [
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 430" role="img">',
-        f"<title>{escape(login)}: {total} contributions over 28 days</title>",
-        '<rect x="1" y="1" width="398" height="428" rx="20" fill="#f0f2e9" stroke="#cbd3c1"/>',
-        '<rect x="12" y="12" width="376" height="406" rx="7" fill="#e7ebdc" stroke="#72816a"/>',
-        text(f"@{login}", 30, 47, 20, "#344b38"),
-        text("GITHUB / LAST 28 DAYS", 30, 72, 14),
-        '<path d="M30 87H370 M30 284H370" stroke="#a8b49d"/>',
-    ]
-    for col in range(7):
-        label = (days[0].date + timedelta(days=col)).strftime("%a")[0]
-        svg.append(text(label, 46 + col * 47, 111, 14))
-    for i, day in enumerate(days):
-        x, y = 36 + (i % 7) * 47, 122 + (i // 7) * 31
-        svg.append(
-            f'<rect x="{x}" y="{y}" width="32" height="23" rx="2" '
-            f'fill="{COLORS[day.level]}" stroke="#a8b49d" stroke-width="0.6">'
-            f"<title>{day.date}: {day.count} contributions</title></rect>"
-        )
-    svg.extend(
-        [
-            text(f"{days[0].date:%b %d} - {days[-1].date:%b %d}", 36, 269, 15),
-            numeral(total, 30, 306, min(9, 145 // (len(str(total)) * 4 - 1))),
-            text("CONTRIBUTIONS", 30, 371, 14),
-            numeral(active, 207, 314, 6),
-            text("ACTIVE DAYS", 191, 371, 12),
-            numeral(best, 313, 314, 6),
-            text("BEST STREAK", 291, 371, 12),
-            text(f"UPDATED {now:%Y-%m-%d} UTC", 30, 401, 13),
+            text(f"{days[0].date:%m/%d} – {days[-1].date:%m/%d}", 20, 115, 10),
+            text("Daily update", 369, 115, 10),
             "</svg>",
         ]
     )
@@ -233,7 +169,7 @@ def main() -> None:
         raise ValueError("Invalid profile login")
     now = datetime.now(UTC)
     days = fetch_days(login, now)
-    for name, renderer in [("github.svg", render), ("github-mobile.svg", render_mobile)]:
+    for name, renderer in [("github.svg", render)]:
         path = Path("assets") / name
         path.parent.mkdir(exist_ok=True)
         temporary = path.with_suffix(".tmp")
