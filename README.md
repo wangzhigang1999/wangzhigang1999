@@ -2,7 +2,7 @@
 
 Data infrastructure, open source, and small tools that make everyday life better.
 
-I work on data systems and build things across **Rust, Go, and Python** — from Spark tooling to a little display on my desk.
+I work on data systems and build things across **Rust, Go, and Python** — from developer tools to a little display on my desk.
 
 <a href="https://github.com/wangzhigang1999/glance">
   <picture>
@@ -14,7 +14,6 @@ I work on data systems and build things across **Rust, Go, and Python** — from
 ### Things I build
 
 - **[Glance](https://github.com/wangzhigang1999/glance)** — An ESP32-S3 desk display. Local readings, GitHub activity, and a quiet pixel interface. The card above borrows its screen.
-- **[spark-insight](https://github.com/wangzhigang1999/spark-insight)** — Explore Spark event logs with Rust, DataFusion SQL, Parquet, and a terminal dashboard.
 - **[CouchPilot](https://github.com/wangzhigang1999/couchpilot)** — Control a desktop with a gamepad. Built in Go.
 
 ### Around here
