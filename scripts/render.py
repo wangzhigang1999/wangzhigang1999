@@ -129,25 +129,25 @@ def render(login: str, days: list[Day], now: datetime) -> str:
     total, active, best = stats(days)
     title = f"{login}: {total} contributions, {active} active days in the last 28 days"
     svg = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="132" '
-        'viewBox="0 0 480 132" role="img" aria-labelledby="title desc">',
+        '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="132" '
+        'viewBox="0 0 640 132" role="img" aria-labelledby="title desc">',
         f'<title id="title">{escape(title)}</title>',
         f'<desc id="desc">Updated {now:%Y-%m-%d} UTC. Contributions are not commits. '
         "Best streak is limited to this 28-day window.</desc>",
-        '<rect x=".5" y=".5" width="479" height="131" rx="12" fill="#fff" stroke="#dfe5df"/>',
+        '<rect x=".5" y=".5" width="639" height="131" rx="12" fill="#fff" stroke="#dfe5df"/>',
         text("GitHub activity", 20, 25, 13, "#34473a", 600),
-        text("Last 28 days", 369, 25),
-        '<path d="M135 46v42 M249 46v42" stroke="#e8ece7"/>',
+        text("Last 28 days", 529, 25),
+        '<path d="M181 46v42 M357 46v42" stroke="#e8ece7"/>',
     ]
     for x, value, label in [
         (20, total, "contributions"),
-        (153, active, "active days"),
-        (267, best, "best streak · days"),
+        (203, active, "active days"),
+        (379, best, "best streak · days"),
     ]:
         svg.append(text(str(value), x, 69, 30, "#365744", 600))
         svg.append(text(label, x, 88))
     for i, day in enumerate(days):
-        x, y = 369 + (i % 7) * 13, 41 + (i // 7) * 13
+        x, y = 529 + (i % 7) * 13, 41 + (i // 7) * 13
         svg.append(
             f'<rect x="{x}" y="{y}" width="10" height="10" rx="2" '
             f'fill="{COLORS[day.level]}"><title>{day.date}: '
@@ -156,7 +156,7 @@ def render(login: str, days: list[Day], now: datetime) -> str:
     svg.extend(
         [
             text(f"{days[0].date:%m/%d} – {days[-1].date:%m/%d}", 20, 115, 10),
-            text("Daily update", 369, 115, 10),
+            text("Daily update", 529, 115, 10),
             "</svg>",
         ]
     )
