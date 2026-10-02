@@ -1,0 +1,48 @@
+name: Refresh profile card
+on:
+  schedule:
+    - cron: '17 0 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/**
+      - tests/**
+      - pyproject.toml
+      - .github/workflows/profile.yml
+
+permissions:
+  contents: write
+concurrency:
+  group: profile-card
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check generator
+        run: |
+          python -m pip install ruff==0.13.3 pyright==1.1.406
+          ruff check .
+          ruff format --check .
+          pyright
+          python -m unittest discover -s tests -v
+      - name: Render public profile activity
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROFILE_LOGIN: wangzhigang1999
+        run: python scripts/render.py
+      - name: Save only a changed image
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/github.svg
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh GitHub activity card'
+            git push
+          fi
