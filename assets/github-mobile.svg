@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="376" viewBox="0 0 400 376" role="img" aria-labelledby="title desc">
 <title id="title">wangzhigang1999: 273 contributions, 48 active days in the last 12 weeks</title>
-<desc id="desc">Updated 2026-10-04 UTC. GitHub contribution counts, not all Git commits. Best streak is limited to this 84-day window. The four categories do not include repository creation or restricted activity.</desc>
+<desc id="desc">Updated 2026-10-05 UTC. GitHub contribution counts, not all Git commits. Best streak is limited to this 84-day window. The four categories do not include repository creation or restricted activity.</desc>
 <rect x=".5" y=".5" width="399" height="375" rx="12" fill="#fff" stroke="#dfe5df"/>
 <text x="24" y="28" font-size="14" fill="#34473a" font-weight="600" font-family="Segoe UI,Arial,sans-serif">GitHub activity</text>
 <text x="292" y="28" font-size="11" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Last 12 weeks</text>
@@ -8,7 +8,7 @@
 <text x="24" y="102" font-size="11" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">contributions</text>
 <text x="151" y="81" font-size="32" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">48</text>
 <text x="151" y="102" font-size="11" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">active days</text>
-<text x="266" y="81" font-size="32" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">20</text>
+<text x="266" y="81" font-size="32" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">21</text>
 <text x="266" y="102" font-size="11" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">best streak · days</text>
 <path d="M24 122H376" stroke="#e8ece7"/>
 <text x="24" y="153" font-size="22" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">90</text>
@@ -22,7 +22,6 @@
 <text x="76" y="235" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Mon</text>
 <text x="76" y="269" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Wed</text>
 <text x="76" y="303" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Fri</text>
-<rect x="110" y="225" width="13" height="13" rx="3" fill="#bac9a9"><title>2026-07-13: 1 contributions</title></rect>
 <rect x="110" y="242" width="13" height="13" rx="3" fill="#344b38"><title>2026-07-14: 19 contributions</title></rect>
 <rect x="110" y="259" width="13" height="13" rx="3" fill="#bac9a9"><title>2026-07-15: 1 contributions</title></rect>
 <rect x="110" y="276" width="13" height="13" rx="3" fill="#344b38"><title>2026-07-16: 24 contributions</title></rect>
@@ -105,7 +104,8 @@
 <rect x="297" y="276" width="13" height="13" rx="3" fill="#5e7b59"><title>2026-10-01: 13 contributions</title></rect>
 <rect x="297" y="293" width="13" height="13" rx="3" fill="#5e7b59"><title>2026-10-02: 16 contributions</title></rect>
 <rect x="297" y="310" width="13" height="13" rx="3" fill="#bac9a9"><title>2026-10-03: 1 contributions</title></rect>
-<rect x="314" y="208" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-10-04: 0 contributions</title></rect>
-<text x="24" y="358" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Jul 13 – Oct 04, 2026</text>
+<rect x="314" y="208" width="13" height="13" rx="3" fill="#bac9a9"><title>2026-10-04: 1 contributions</title></rect>
+<rect x="314" y="225" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-10-05: 0 contributions</title></rect>
+<text x="24" y="358" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Jul 14 – Oct 05, 2026</text>
 <text x="308" y="358" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Daily update</text>
 </svg>
