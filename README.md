@@ -20,8 +20,8 @@ I work on data systems and build things across **Rust, Go, and Python** — from
 
 Lakehouses · Query engines · Developer tools · Embedded Rust
 
-[Repositories](https://github.com/wangzhigang1999?tab=repositories) · [Pull requests](https://github.com/pulls?q=is%3Apr+author%3Awangzhigang1999+is%3Apublic) · [A small meme project](https://gi
+[Repositories](https://github.com/wangzhigang1999?tab=repositories) · [Pull requests](https://github.com/pulls?q=is%3Apr+author%3Awangzhigang1999+is%3Apublic) · [A small meme project](https://github.com/wangzhigang1999/)
 
-<div align="center">
-  <img src="assets/oss.png" alt="OSS" width="100%" />
-</div>
+<figure>
+  <img src="assets/oss.png" alt="OSS" style="width: 100%; max-width: 100%; height: auto; display: block;" />
+</figure>
