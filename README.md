@@ -4,9 +4,16 @@
 
 # Hi, I'm Zhigang.
 
-Data infrastructure, open source, and small tools that make everyday life better.
+**[Apache Kyuubi Committer](https://kyuubi.apache.org/project_history.html) · Data systems at Alibaba Cloud**
 
-I work on data systems and build things across **Rust, Go, and Python** — from developer tools to a little display on my desk.
+I work on data infrastructure and contribute to Apache Kyuubi and Apache Paimon. I'm exploring Ray Data, with a focus on distributed execution and performance for AI workloads.
+
+### Open source
+
+- **[Apache Kyuubi](https://github.com/apache/kyuubi)** · Committer. [My contributions](https://github.com/apache/kyuubi/pulls?q=is%3Apr+author%3Awangzhigang1999).
+- **[Apache Paimon](https://github.com/apache/paimon)** · Contributor working on Python read paths and data correctness. [My contributions](https://github.com/apache/paimon/pulls?q=is%3Apr+author%3Awangzhigang1999).
+
+
 
 <a href="https://github.com/wangzhigang1999/glance">
   <picture>
