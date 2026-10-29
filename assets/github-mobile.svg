@@ -1,28 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="376" viewBox="0 0 400 376" role="img" aria-labelledby="title desc">
-<title id="title">wangzhigang1999: 412 contributions, 56 active days in the last 12 weeks</title>
-<desc id="desc">Updated 2026-10-28 UTC. GitHub contribution counts, not all Git commits. Best streak is limited to this 84-day window. The four categories do not include repository creation or restricted activity.</desc>
+<title id="title">wangzhigang1999: 463 contributions, 57 active days in the last 12 weeks</title>
+<desc id="desc">Updated 2026-10-29 UTC. GitHub contribution counts, not all Git commits. Best streak is limited to this 84-day window. The four categories do not include repository creation or restricted activity.</desc>
 <rect x=".5" y=".5" width="399" height="375" rx="12" fill="#fff" stroke="#dfe5df"/>
 <text x="24" y="28" font-size="14" fill="#34473a" font-weight="600" font-family="Segoe UI,Arial,sans-serif">GitHub activity</text>
 <text x="292" y="28" font-size="11" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Last 12 weeks</text>
-<text x="24" y="81" font-size="32" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">412</text>
+<text x="24" y="81" font-size="32" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">463</text>
 <text x="24" y="102" font-size="11" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">contributions</text>
-<text x="151" y="81" font-size="32" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">56</text>
+<text x="151" y="81" font-size="32" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">57</text>
 <text x="151" y="102" font-size="11" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">active days</text>
-<text x="266" y="81" font-size="32" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">45</text>
+<text x="266" y="81" font-size="32" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">46</text>
 <text x="266" y="102" font-size="11" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">best streak · days</text>
 <path d="M24 122H376" stroke="#e8ece7"/>
-<text x="24" y="153" font-size="22" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">63</text>
+<text x="24" y="153" font-size="22" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">64</text>
 <text x="24" y="174" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Commits</text>
 <text x="116" y="153" font-size="22" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">55</text>
 <text x="116" y="174" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">PRs opened</text>
 <text x="208" y="153" font-size="22" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">29</text>
 <text x="208" y="174" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Issues opened</text>
-<text x="300" y="153" font-size="22" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">16</text>
+<text x="300" y="153" font-size="22" fill="#365744" font-weight="600" font-family="Segoe UI,Arial,sans-serif">18</text>
 <text x="300" y="174" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">PR reviews</text>
 <text x="76" y="235" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Mon</text>
 <text x="76" y="269" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Wed</text>
 <text x="76" y="303" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Fri</text>
-<rect x="110" y="276" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-08-06: 0 contributions</title></rect>
 <rect x="110" y="293" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-08-07: 0 contributions</title></rect>
 <rect x="110" y="310" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-08-08: 0 contributions</title></rect>
 <rect x="127" y="208" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-08-09: 0 contributions</title></rect>
@@ -105,7 +104,8 @@
 <rect x="314" y="208" width="13" height="13" rx="3" fill="#344b38"><title>2026-10-25: 33 contributions</title></rect>
 <rect x="314" y="225" width="13" height="13" rx="3" fill="#344b38"><title>2026-10-26: 34 contributions</title></rect>
 <rect x="314" y="242" width="13" height="13" rx="3" fill="#344b38"><title>2026-10-27: 48 contributions</title></rect>
-<rect x="314" y="259" width="13" height="13" rx="3" fill="#bac9a9"><title>2026-10-28: 3 contributions</title></rect>
-<text x="24" y="358" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Aug 06 – Oct 28, 2026</text>
+<rect x="314" y="259" width="13" height="13" rx="3" fill="#344b38"><title>2026-10-28: 31 contributions</title></rect>
+<rect x="314" y="276" width="13" height="13" rx="3" fill="#5e7b59"><title>2026-10-29: 23 contributions</title></rect>
+<text x="24" y="358" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Aug 07 – Oct 29, 2026</text>
 <text x="308" y="358" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Daily update</text>
 </svg>
