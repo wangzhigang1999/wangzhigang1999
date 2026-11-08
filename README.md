@@ -26,7 +26,7 @@ I work on data infrastructure and contribute to Apache Kyuubi and Apache Paimon.
 
 - **[Glance](https://github.com/wangzhigang1999/glance)** — A little window into your digital life — GitHub activity and your connected home, right on your desk.
 - **[CouchPilot](https://github.com/wangzhigang1999/couchpilot)** — Vibe code from the couch. Drive your AI coding workflow with a gamepad.
-- **[Contributor Lens](https://github.com/wangzhigang1999/contributor-lens)** — A Chrome extension to explore an author's recent pull requests, right on GitHub.
+- **[Contributor Lens](https://github.com/wangzhigang1999/contributor-lens)** — A Chrome extension that helps reviewers inspect an author's recent PR volume and patterns across GitHub.
 
 ### Around here
 
