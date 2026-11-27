@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="376" viewBox="0 0 400 376" role="img" aria-labelledby="title desc">
 <title id="title">wangzhigang1999: 842 contributions, 78 active days in the last 12 weeks</title>
-<desc id="desc">Updated 2026-11-26 UTC. GitHub contribution counts, not all Git commits. Best streak is limited to this 84-day window. The four categories do not include repository creation or restricted activity.</desc>
+<desc id="desc">Updated 2026-11-27 UTC. GitHub contribution counts, not all Git commits. Best streak is limited to this 84-day window. The four categories do not include repository creation or restricted activity.</desc>
 <rect x=".5" y=".5" width="399" height="375" rx="12" fill="#fff" stroke="#dfe5df"/>
 <text x="24" y="28" font-size="14" fill="#34473a" font-weight="600" font-family="Segoe UI,Arial,sans-serif">GitHub activity</text>
 <text x="292" y="28" font-size="11" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Last 12 weeks</text>
@@ -22,7 +22,6 @@
 <text x="76" y="235" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Mon</text>
 <text x="76" y="269" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Wed</text>
 <text x="76" y="303" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Fri</text>
-<rect x="110" y="293" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-09-04: 0 contributions</title></rect>
 <rect x="110" y="310" width="13" height="13" rx="3" fill="#bac9a9"><title>2026-09-05: 1 contributions</title></rect>
 <rect x="127" y="208" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-09-06: 0 contributions</title></rect>
 <rect x="127" y="225" width="13" height="13" rx="3" fill="#bac9a9"><title>2026-09-07: 4 contributions</title></rect>
@@ -106,6 +105,7 @@
 <rect x="314" y="242" width="13" height="13" rx="3" fill="#bac9a9"><title>2026-11-24: 8 contributions</title></rect>
 <rect x="314" y="259" width="13" height="13" rx="3" fill="#bac9a9"><title>2026-11-25: 4 contributions</title></rect>
 <rect x="314" y="276" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-11-26: 0 contributions</title></rect>
-<text x="24" y="358" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Sep 04 – Nov 26, 2026</text>
+<rect x="314" y="293" width="13" height="13" rx="3" fill="#d9dfcf"><title>2026-11-27: 0 contributions</title></rect>
+<text x="24" y="358" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Sep 05 – Nov 27, 2026</text>
 <text x="308" y="358" font-size="10" fill="#68776e" font-weight="400" font-family="Segoe UI,Arial,sans-serif">Daily update</text>
 </svg>
